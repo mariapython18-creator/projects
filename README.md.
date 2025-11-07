@@ -1,0 +1,36 @@
+# E-Commerce Web Application
+
+## Overview
+This is a fully functional e-commerce web application built with Python/Django (or your framework). It includes all standard e-commerce features and supports online payment integration. The application allows users to browse products, manage carts, and complete purchases, while admins can manage products and categories.
+
+---
+
+## Features
+
+### **User Features**
+- Browse products by category
+- View product details
+- Add products to cart
+- Update or remove items in the cart
+- Checkout and make payments (payment gateway integrated)
+- Order history (optional)
+- Responsive UI
+
+### **Admin Features**
+- Add, update, and delete product categories
+- Add, update, and delete products
+- View orders and manage inventory
+- Dashboard with product statistics (optional)
+
+---
+
+## Technology Stack
+- **Backend:** Python, Django (or your backend framework)
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Database:** SQLite / MySQL (as configured)
+- **Payment Gateway:** Razorpay / Stripe / PayPal (test mode enabled)
+- **Version Control:** Git & GitHub
+
+---
+
+## Project Structure
