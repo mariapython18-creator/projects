@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid text-center my-3">
+    <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-fluid" style="max-height:200px;">
+</div>
+
+<div class="products-box">
+    <div class="container">
+        <!-- Category title and description -->
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>{{ category.name }}</h1>
+                    <p>{{ category.description }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products grid -->
+        <div class="row">
+            {% for j in category.products.all %}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <!-- Product Image -->
+                    <img src="{{ j.image.url }}" class="card-img-top img-fluid" alt="{{ j.name }}" style="height:200px; object-fit:cover;">
+
+                    <!-- Product Details -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ j.name }}</h5>
+                        <p class="card-text text-muted">{{ j.description }}</p>
+                        <p class="card-text"><strong>₹{{ j.price }}</strong></p>
+                        <p class="card-text"><small class="text-muted">{{ j.category.name }}</small></p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="card-footer text-center">
+                        <a class="btn btn-sm btn-primary" href="{% url 'shop:details' j.id %}">Details</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No products found in this category.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
